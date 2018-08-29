@@ -1,8 +1,6 @@
 # [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
-> [conventional-changelog](https://github.com/ajoslin/conventional-changelog) [angular](https://github.com/angular/angular) preset
-
-**Issues with the convention itself should be reported on the Angular issue tracker.**
+> Fork of [conventional-changelog](https://github.com/ajoslin/conventional-changelog) [angular](https://github.com/angular/angular) preset without hidden commit types
 
 ## Angular Convention
 
@@ -60,9 +58,7 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 
 ### Type
 
-If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
-
-Other prefixes are up to your discretion. Suggested prefixes are `build`, `ci`, `docs` ,`style`, `refactor`, and `test` for non-changelog related tasks.
+Prefixes are `feat`, `fix`, `perf`, `build`, `ci`, `docs` ,`style`, `refactor`, and `test`.
 
 Details regarding these types can be found in the official [Angular Contributing Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type)
 
@@ -93,11 +89,11 @@ reference GitHub issues that this commit **Closes**.
 
 A detailed explanation can be found in this [document][commit-message-format].
 
-[npm-image]: https://badge.fury.io/js/conventional-changelog-angular.svg
-[npm-url]: https://npmjs.org/package/conventional-changelog-angular
-[travis-image]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular.svg?branch=master
-[travis-url]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular
-[daviddm-image]: https://david-dm.org/conventional-changelog/conventional-changelog-angular.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/conventional-changelog/conventional-changelog-angular
-[coveralls-image]: https://coveralls.io/repos/conventional-changelog/conventional-changelog-angular/badge.svg
-[coveralls-url]: https://coveralls.io/r/conventional-changelog/conventional-changelog-angular
+[npm-image]: https://flat.badgen.net/npm/v/conventional-changelog-angular-all-2
+[npm-url]: https://npmjs.org/package/conventional-changelog-angular-all-2
+
+[travis-image]: https://flat.badgen.net/travis/wopian/conventional-changelog-angular-all-2
+[travis-url]: https://travis-ci.org/wopian/conventional-changelog-angular-all-2
+
+[daviddm-image]: https://flat.badgen.net/david/dep/zeit/pkg
+[daviddm-url]: https://david-dm.org/wopian/conventional-changelog-angular-all-2

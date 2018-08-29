@@ -77,7 +77,7 @@ describe('angular preset', function () {
         expect(chunk).to.include('amazing new module')
         expect(chunk).to.include('**compile:** avoid a bug')
         expect(chunk).to.include('make it faster')
-        expect(chunk).to.include(', closes [#1](https://github.com/conventional-changelog/conventional-changelog/issues/1) [#2](https://github.com/conventional-changelog/conventional-changelog/issues/2)')
+        expect(chunk).to.include(', closes [#1](https://github.com/wopian/conventional-changelog-angular-all-2/issues/1) [#2](https://github.com/wopian/conventional-changelog-angular-all-2/issues/2)')
         expect(chunk).to.include('New build system.')
         expect(chunk).to.include('Not backward compatible.')
         expect(chunk).to.include('**compile:** The Change is huge.')
@@ -104,7 +104,7 @@ describe('angular preset', function () {
       })
       .pipe(through(function (chunk) {
         chunk = chunk.toString()
-        expect(chunk).to.include('[#133](https://github.com/conventional-changelog/conventional-changelog/issues/133)')
+        expect(chunk).to.include('[#133](https://github.com/wopian/conventional-changelog-angular-all-2/issues/133)')
         done()
       }))
   })
@@ -120,8 +120,8 @@ describe('angular preset', function () {
       })
       .pipe(through(function (chunk) {
         chunk = chunk.toString()
-        expect(chunk).to.include('[#88](https://github.com/conventional-changelog/conventional-changelog/issues/88)')
-        expect(chunk).to.not.include('closes [#88](https://github.com/conventional-changelog/conventional-changelog/issues/88)')
+        expect(chunk).to.include('[#88](https://github.com/wopian/conventional-changelog-angular-all-2/issues/88)')
+        expect(chunk).to.not.include('closes [#88](https://github.com/wopian/conventional-changelog-angular-all-2/issues/88)')
         done()
       }))
   })
@@ -234,9 +234,9 @@ describe('angular preset', function () {
       .pipe(through(function (chunk, enc, cb) {
         chunk = chunk.toString()
 
-        expect(chunk).to.include('(https://github.com/conventional-changelog/conventional-changelog/compare')
-        expect(chunk).to.include('](https://github.com/conventional-changelog/conventional-changelog/commit/')
-        expect(chunk).to.include('](https://github.com/conventional-changelog/conventional-changelog/issues/')
+        expect(chunk).to.include('(https://github.com/wopian/conventional-changelog-angular-all-2/compare')
+        expect(chunk).to.include('](https://github.com/wopian/conventional-changelog-angular-all-2/commit/')
+        expect(chunk).to.include('](https://github.com/wopian/conventional-changelog-angular-all-2/issues/')
 
         i++
         cb()
