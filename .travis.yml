@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+- node
+- 8
+- 6
+matrix:
+  fast_finish: true
+cache:
+  directories:
+  - node_modules/
+
+before_script:
+  - git config --global user.name 'CI'
+  - git config --global user.email 'dummy@example.org'
+
+script:
+  - npm test
+
+after_script:
+- nyc report --reporter=text-lcov | coveralls
+
+os:
+- linux
+#- osx
+language: node_js
+node_js:
+- node
+- 8 # EOL Dec 19
+- 6 # EOL Apr 19
+cache:
+  yarn: true
+sudo: false
+matrix:
+  fast_finish: true
+  allow_failures:
+  - node_js: 6
+before_script:
+- git config --global user.name 'CI'
+- git config --global user.email 'dummy@example.org'
+script:
+- yarn test
+after_script:
+- nyc report --reporter=text-lcov
