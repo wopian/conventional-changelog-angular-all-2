@@ -89,15 +89,6 @@ describe('angular preset', function () {
         expect(chunk).to.include('Reverts')
         expect(chunk).to.include('bad commit')
         expect(chunk).to.include('BREAKING CHANGE')
-
-        expect(chunk).to.not.include('ci')
-        expect(chunk).to.not.include('feat')
-        expect(chunk).to.not.include('fix')
-        expect(chunk).to.not.include('perf')
-        expect(chunk).to.not.include('revert')
-        expect(chunk).to.not.include('***:**')
-        expect(chunk).to.not.include(': Not backward compatible.')
-
         done()
       }))
   })
@@ -151,29 +142,6 @@ describe('angular preset', function () {
       }))
   })
 
-  it('should not discard commit if there is BREAKING CHANGE', function (done) {
-    preparing(5)
-
-    conventionalChangelogCore({
-      config: preset
-    })
-      .on('error', function (err) {
-        done(err)
-      })
-      .pipe(through(function (chunk) {
-        chunk = chunk.toString()
-
-        expect(chunk).to.include('Continuous Integration')
-        expect(chunk).to.include('Build System')
-        expect(chunk).to.include('Documentation')
-        expect(chunk).to.include('Styles')
-        expect(chunk).to.include('Code Refactoring')
-        expect(chunk).to.include('Tests')
-
-        done()
-      }))
-  })
-
   it('should work if there is a semver tag', function (done) {
     preparing(6)
     var i = 0
@@ -189,7 +157,6 @@ describe('angular preset', function () {
         chunk = chunk.toString()
 
         expect(chunk).to.include('some more features')
-        expect(chunk).to.not.include('BREAKING')
 
         i++
         cb()
