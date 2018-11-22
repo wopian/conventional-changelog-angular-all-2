@@ -16,6 +16,9 @@ matrix:
   fast_finish: true
   allow_failures:
   - node_js: 6
+env:
+  global:
+    - YARN_GPG=no # https://travis-ci.community/t/build-doesnt-finish-after-completing-tests/288
 before_script:
 - git config --global user.name 'CI'
 - git config --global user.email 'dummy@example.org'
