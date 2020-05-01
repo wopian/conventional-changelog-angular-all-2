@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-angular-all-2",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "conventional-changelog angular preset with no hidden commit types",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   ],
   "author": "James Harris",
   "engines": {
-    "node": ">=6.9.0"
+    "node": ">=10.0.0"
   },
   "license": "ISC",
   "bugs": {

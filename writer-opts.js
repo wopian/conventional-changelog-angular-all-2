@@ -1,15 +1,15 @@
 'use strict'
 
-const compareFunc = require(`compare-func`)
-const Q = require(`q`)
-const readFile = Q.denodeify(require(`fs`).readFile)
-const resolve = require(`path`).resolve
+const compareFunc = require('compare-func')
+const Q = require('q')
+const readFile = Q.denodeify(require('fs').readFile)
+const resolve = require('path').resolve
 
 module.exports = Q.all([
-  readFile(resolve(__dirname, `./templates/template.hbs`), `utf-8`),
-  readFile(resolve(__dirname, `./templates/header.hbs`), `utf-8`),
-  readFile(resolve(__dirname, `./templates/commit.hbs`), `utf-8`),
-  readFile(resolve(__dirname, `./templates/footer.hbs`), `utf-8`)
+  readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/footer.hbs'), 'utf-8')
 ])
   .spread((template, header, commit, footer) => {
     const writerOpts = getWriterOpts()
@@ -28,44 +28,44 @@ function getWriterOpts () {
       const issues = []
 
       commit.notes.forEach(note => {
-        note.title = `BREAKING CHANGES`
+        note.title = 'BREAKING CHANGES'
       })
 
-      if (commit.type === `feat`) {
-        commit.type = `New Features`
-      } else if (commit.type === `fix`) {
-        commit.type = `Bug Fixes`
-      } else if (commit.type === `perf`) {
-        commit.type = `Performance Improvements`
-      } else if (commit.type === `revert`) {
-        commit.type = `Reverts`
-      } else if (commit.type === `docs`) {
-        commit.type = `Documentation Changes`
-      } else if (commit.type === `style`) {
-        commit.type = `Styles`
-      } else if (commit.type === `refactor`) {
-        commit.type = `Refactors`
-      } else if (commit.type === `test`) {
-        commit.type = `Tests`
-      } else if (commit.type === `build`) {
-        commit.type = `Build System / Dependencies`
-      } else if (commit.type === `ci`) {
-        commit.type = `Continuous Integration`
-      } else if (commit.type === `chore`) {
-        commit.type = `Chores`
+      if (commit.type === 'feat') {
+        commit.type = 'New Features'
+      } else if (commit.type === 'fix') {
+        commit.type = 'Bug Fixes'
+      } else if (commit.type === 'perf') {
+        commit.type = 'Performance Improvements'
+      } else if (commit.type === 'revert') {
+        commit.type = 'Reverts'
+      } else if (commit.type === 'docs') {
+        commit.type = 'Documentation Changes'
+      } else if (commit.type === 'style') {
+        commit.type = 'Styles'
+      } else if (commit.type === 'refactor') {
+        commit.type = 'Refactors'
+      } else if (commit.type === 'test') {
+        commit.type = 'Tests'
+      } else if (commit.type === 'build') {
+        commit.type = 'Build System / Dependencies'
+      } else if (commit.type === 'ci') {
+        commit.type = 'Continuous Integration'
+      } else if (commit.type === 'chore') {
+        commit.type = 'Chores'
       } else {
-        commit.type = `Other Changes`
+        commit.type = 'Other Changes'
       }
 
-      if (commit.scope === `*`) {
-        commit.scope = ``
+      if (commit.scope === '*') {
+        commit.scope = ''
       }
 
-      if (typeof commit.hash === `string`) {
+      if (typeof commit.hash === 'string') {
         commit.hash = commit.hash.substring(0, 7)
       }
 
-      if (typeof commit.subject === `string`) {
+      if (typeof commit.subject === 'string') {
         let url = context.repository
           ? `${context.host}/${context.owner}/${context.repository}`
           : context.repoUrl
@@ -94,10 +94,10 @@ function getWriterOpts () {
 
       return commit
     },
-    groupBy: `type`,
-    commitGroupsSort: `title`,
-    commitsSort: [`scope`, `subject`],
-    noteGroupsSort: `title`,
+    groupBy: 'type',
+    commitGroupsSort: 'title',
+    commitsSort: ['scope', 'subject'],
+    noteGroupsSort: 'title',
     notesSort: compareFunc
   }
 }
